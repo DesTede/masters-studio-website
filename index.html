@@ -24,6 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/cookie-consent.css">
 
 <!-- Local business structured data (SEO) -->
 <script type="application/ld+json">
@@ -361,6 +362,14 @@
       <span>© 2026 Masters. studio · כל הזכויות שמורות</span>
       <span>עוצב בהתאם לספר המותג של Masters.</span>
     </div>
+    <div class="footer-bottom" style="margin-top:6px">
+      <span>
+        <a href="privacy-policy.html">מדיניות פרטיות</a> ·
+        <a href="terms.html">תנאי שימוש</a> ·
+        <a href="accessibility.html">הצהרת נגישות</a> ·
+        <a href="privacy-settings.html">הגדרות פרטיות</a>
+      </span>
+    </div>
   </div>
 </footer>
 
@@ -375,5 +384,67 @@
   b.addEventListener('click',()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});
   m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('open');b.setAttribute('aria-expanded',false)}));
 </script>
+
+<!-- Masters Studio — Cookie Consent Banner -->
+<div id="mc-banner" role="dialog" aria-live="polite" aria-label="הגדרות פרטיות ועוגיות">
+  <div class="mc-row">
+    <p>
+      אתר זה משתמש בעוגיות ובטכנולוגיות מעקב, כולל של צדדים שלישיים, כדי לספק ולשפר את השירותים שלנו ולהציג תוכן שיווקי בהתאם לתחומי העניין שלך. תוכל/י לשנות או לבטל את הסכמתך בכל עת דרך
+      <a href="privacy-settings.html">הגדרות פרטיות</a>.
+      למידע נוסף עיינו ב<a href="privacy-policy.html">מדיניות הפרטיות</a> וב<a href="terms.html">תנאי השימוש</a> שלנו.
+    </p>
+    <div class="mc-actions">
+      <button type="button" class="mc-reject-all" id="mc-reject-all">דחה הכל</button>
+      <button type="button" class="mc-more" id="mc-more" aria-expanded="false" aria-controls="mc-panel">מידע נוסף</button>
+      <button type="button" class="mc-accept-all" id="mc-accept-all">אני מסכים</button>
+    </div>
+
+    <div id="mc-panel">
+      <div class="mc-pref-row">
+        <label class="mc-switch">
+          <input type="checkbox" checked disabled>
+          <span class="mc-slider"></span>
+        </label>
+        <div class="mc-pref-text">
+          <h4>חיוני</h4>
+          <p>נדרש לתפעול בסיסי של האתר. לא ניתן לביטול.</p>
+        </div>
+      </div>
+      <div class="mc-pref-row">
+        <label class="mc-switch">
+          <input type="checkbox" id="mc-functional">
+          <span class="mc-slider"></span>
+        </label>
+        <div class="mc-pref-text">
+          <h4>פונקציונאלי</h4>
+          <p>מאפשר זכירת העדפות שימוש (כגון שפה או תצוגה).</p>
+        </div>
+      </div>
+      <div class="mc-pref-row">
+        <label class="mc-switch">
+          <input type="checkbox" id="mc-analytics">
+          <span class="mc-slider"></span>
+        </label>
+        <div class="mc-pref-text">
+          <h4>אנליטיים</h4>
+          <p>עוזר לנו להבין כיצד גולשים משתמשים באתר, לצורכי שיפור ו-SEO.</p>
+        </div>
+      </div>
+      <div class="mc-pref-row">
+        <label class="mc-switch">
+          <input type="checkbox" id="mc-marketing">
+          <span class="mc-slider"></span>
+        </label>
+        <div class="mc-pref-text">
+          <h4>שיווק</h4>
+          <p>משמש להצגת תוכן שיווקי ופרסום ממוקד ברשתות ובמנועי חיפוש.</p>
+        </div>
+      </div>
+      <button type="button" class="mc-save" id="mc-save-selected">שמור בחירה</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/cookie-consent.js"></script>
 </body>
 </html>

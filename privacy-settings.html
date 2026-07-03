@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://masters-studio.co.il/privacy-settings.html">
 <link rel="icon" href="/assets/Main_Logo__Black.png">
-<link rel="stylesheet" href="/assets/css/legal.css">
+<link rel="stylesheet" href="/css/legal.css">
 <style>
   .pref-row{
     display:flex; align-items:center; justify-content:space-between;
@@ -64,6 +64,17 @@
 
   <div class="pref-row">
     <label class="switch">
+      <input type="checkbox" id="pref-functional">
+      <span class="slider"></span>
+    </label>
+    <div class="pref-text">
+      <h3>עוגיות פונקציונאליות</h3>
+      <p>מאפשרות זכירת העדפות שימוש שלך באתר (כגון שפה או תצוגה).</p>
+    </div>
+  </div>
+
+  <div class="pref-row">
+    <label class="switch">
       <input type="checkbox" id="pref-analytics">
       <span class="slider"></span>
     </label>
@@ -102,18 +113,20 @@
 <script>
 (function(){
   var KEY = 'masters_privacy_prefs';
+  var functional = document.getElementById('pref-functional');
   var analytics = document.getElementById('pref-analytics');
   var marketing = document.getElementById('pref-marketing');
   var status = document.getElementById('save-status');
 
   try{
     var saved = JSON.parse(localStorage.getItem(KEY) || '{}');
+    functional.checked = !!saved.functional;
     analytics.checked = !!saved.analytics;
     marketing.checked = !!saved.marketing;
   }catch(e){}
 
   document.getElementById('save-prefs').addEventListener('click', function(){
-    var prefs = { analytics: analytics.checked, marketing: marketing.checked, updated: new Date().toISOString() };
+    var prefs = { essential: true, functional: functional.checked, analytics: analytics.checked, marketing: marketing.checked, updated: new Date().toISOString() };
     try{
       localStorage.setItem(KEY, JSON.stringify(prefs));
       status.textContent = 'ההעדפות נשמרו בהצלחה.';
