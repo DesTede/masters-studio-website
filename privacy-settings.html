@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>הגדרות פרטיות | Masters. studio</title>
+<meta name="description" content="נהל/י את העדפות הפרטיות והעוגיות שלך באתר Masters. studio.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://masters-studio.co.il/privacy-settings.html">
+<link rel="icon" href="/assets/Main_Logo__Black.png">
+<link rel="stylesheet" href="/assets/css/legal.css">
+<style>
+  .pref-row{
+    display:flex; align-items:center; justify-content:space-between;
+    background:#fff; border:1px solid #d6d6d6; border-radius:4px;
+    padding:16px 20px; margin-bottom:12px;
+  }
+  .pref-row .pref-text h3{ margin:0 0 4px; font-size:15px; }
+  .pref-row .pref-text p{ margin:0; font-size:13px; color:#666; }
+  .switch{ position:relative; display:inline-block; width:48px; height:26px; flex-shrink:0; margin-right:16px; }
+  .switch input{ opacity:0; width:0; height:0; }
+  .slider{ position:absolute; cursor:pointer; inset:0; background:#ccc; transition:.2s; border-radius:26px; }
+  .slider:before{ position:absolute; content:""; height:20px; width:20px; right:3px; bottom:3px; background:#fff; transition:.2s; border-radius:50%; }
+  input:checked + .slider{ background:#FC6030; }
+  input:checked + .slider:before{ transform:translateX(-22px); }
+  input:disabled + .slider{ background:#191919; opacity:.6; cursor:not-allowed; }
+  #save-status{ font-size:13px; color:#FC6030; margin-top:8px; min-height:18px; }
+  .save-btn{
+    font-family:'Heebo',sans-serif; font-weight:700; font-size:15px;
+    background:#191919; color:#E5E5E5; border:2px solid #FC6030;
+    border-radius:2px; padding:14px 28px; cursor:pointer; width:100%;
+    margin-top:8px; transition:.2s;
+  }
+  .save-btn:hover{ background:#FC6030; color:#191919; }
+</style>
+</head>
+<body class="legal-page">
+
+<header class="legal-header">
+  <img src="/assets/Main_Logo__Dark_BG.png" alt="Masters. studio">
+  <a class="back-home" href="/index.html">חזרה לאתר</a>
+</header>
+
+<section class="legal-hero">
+  <h1>הגדרות פרטיות</h1>
+  <p>נהל/י את השימוש בעוגיות ובנתוני הגלישה שלך באתר</p>
+</section>
+
+<main class="legal-content">
+
+  <h2>העדפות עוגיות</h2>
+  <p>ניתן לשלוט כאן אילו סוגי עוגיות פעילים בעת הגלישה שלך באתר Masters. studio. לפרטים מלאים ראו את <a href="/privacy-policy.html">מדיניות הפרטיות</a> שלנו.</p>
+
+  <div class="pref-row">
+    <label class="switch">
+      <input type="checkbox" checked disabled>
+      <span class="slider"></span>
+    </label>
+    <div class="pref-text">
+      <h3>עוגיות חיוניות</h3>
+      <p>נדרשות לתפקוד תקין של האתר (ניווט, תור, אבטחה). לא ניתנות לכיבוי.</p>
+    </div>
+  </div>
+
+  <div class="pref-row">
+    <label class="switch">
+      <input type="checkbox" id="pref-analytics">
+      <span class="slider"></span>
+    </label>
+    <div class="pref-text">
+      <h3>עוגיות אנליטיקס</h3>
+      <p>עוזרות לנו להבין כיצד משתמשים גולשים באתר (כגון Google Analytics), לשיפור השירות וקידום ה-SEO.</p>
+    </div>
+  </div>
+
+  <div class="pref-row">
+    <label class="switch">
+      <input type="checkbox" id="pref-marketing">
+      <span class="slider"></span>
+    </label>
+    <div class="pref-text">
+      <h3>עוגיות שיווק</h3>
+      <p>משמשות למדידת קמפיינים ופרסום ממוקד ברשתות חברתיות ומנועי חיפוש.</p>
+    </div>
+  </div>
+
+  <button class="save-btn" id="save-prefs">שמור העדפות</button>
+  <div id="save-status" role="status"></div>
+
+</main>
+
+<footer class="legal-footer">
+  <div>Masters. studio © 2026</div>
+  <nav>
+    <a href="/privacy-policy.html">מדיניות פרטיות</a>
+    <a href="/accessibility.html">הצהרת נגישות</a>
+    <a href="/terms.html">תנאי שימוש</a>
+    <a href="/privacy-settings.html">הגדרות פרטיות</a>
+  </nav>
+</footer>
+
+<script>
+(function(){
+  var KEY = 'masters_privacy_prefs';
+  var analytics = document.getElementById('pref-analytics');
+  var marketing = document.getElementById('pref-marketing');
+  var status = document.getElementById('save-status');
+
+  try{
+    var saved = JSON.parse(localStorage.getItem(KEY) || '{}');
+    analytics.checked = !!saved.analytics;
+    marketing.checked = !!saved.marketing;
+  }catch(e){}
+
+  document.getElementById('save-prefs').addEventListener('click', function(){
+    var prefs = { analytics: analytics.checked, marketing: marketing.checked, updated: new Date().toISOString() };
+    try{
+      localStorage.setItem(KEY, JSON.stringify(prefs));
+      status.textContent = 'ההעדפות נשמרו בהצלחה.';
+      // Hook point: enable/disable actual analytics & marketing scripts here based on prefs
+      window.dispatchEvent(new CustomEvent('masters-privacy-prefs-updated', { detail: prefs }));
+    }catch(e){
+      status.textContent = 'שמירת ההעדפות נכשלה — נסה/י שוב.';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

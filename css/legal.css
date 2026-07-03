@@ -1,0 +1,164 @@
+/* Masters Studio — Legal Pages Stylesheet
+   Brand: Off-Black #191919 / Pearl #E5E5E5 / Masters Orange #FC6030
+   Fonts: Heebo (body) / Karantina (display)
+   Drop this file at: assets/css/legal.css (adjust <link> paths per page if your structure differs) */
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Karantina:wght@400;700&display=swap');
+
+:root{
+  --black:#191919;
+  --pearl:#E5E5E5;
+  --orange:#FC6030;
+  --max-w:860px;
+}
+
+*{box-sizing:border-box;}
+
+body.legal-page{
+  margin:0;
+  background:var(--pearl);
+  color:var(--black);
+  font-family:'Heebo',sans-serif;
+  direction:rtl;
+  text-align:right;
+  line-height:1.7;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+
+.legal-header{
+  background:var(--black);
+  padding:20px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.legal-header img{ height:40px; }
+
+.legal-header a.back-home{
+  color:var(--pearl);
+  font-size:14px;
+  text-decoration:none;
+  border:1px solid var(--orange);
+  padding:8px 16px;
+  border-radius:2px;
+  transition:.2s;
+}
+.legal-header a.back-home:hover{ background:var(--orange); color:var(--black); }
+
+.legal-hero{
+  background:var(--black);
+  color:var(--pearl);
+  padding:48px 24px 40px;
+  text-align:center;
+}
+
+.legal-hero h1{
+  font-family:'Karantina',sans-serif;
+  font-weight:700;
+  font-size:42px;
+  letter-spacing:.5px;
+  color:var(--orange);
+  margin:0 0 8px;
+}
+
+.legal-hero p{
+  margin:0;
+  font-size:14px;
+  opacity:.7;
+}
+
+main.legal-content{
+  max-width:var(--max-w);
+  margin:0 auto;
+  padding:40px 24px 80px;
+}
+
+main.legal-content h2{
+  font-family:'Heebo',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  color:var(--black);
+  border-right:4px solid var(--orange);
+  padding-right:12px;
+  margin:36px 0 12px;
+}
+
+main.legal-content h2:first-child{ margin-top:0; }
+
+main.legal-content p, main.legal-content li{
+  font-size:15px;
+  color:#3a3a3a;
+}
+
+main.legal-content ul{ padding-right:20px; margin:12px 0; }
+main.legal-content li{ margin-bottom:6px; }
+
+main.legal-content a{ color:var(--orange); text-decoration:underline; }
+
+.legal-contact-box{
+  background:#fff;
+  border:1px solid #d6d6d6;
+  border-radius:4px;
+  padding:20px 24px;
+  margin-top:32px;
+}
+
+.legal-contact-box h3{
+  font-size:16px;
+  margin:0 0 10px;
+  color:var(--black);
+}
+
+.legal-footer{
+  background:var(--black);
+  color:var(--pearl);
+  text-align:center;
+  padding:24px;
+  font-size:13px;
+  opacity:.8;
+}
+
+.legal-footer nav{ margin-top:10px; }
+.legal-footer nav a{
+  color:var(--pearl);
+  margin:0 10px;
+  font-size:13px;
+  text-decoration:none;
+  opacity:.85;
+}
+.legal-footer nav a:hover{ color:var(--orange); }
+
+/* Accessibility-page specific toggle controls */
+.a11y-controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:20px 0 8px;
+}
+.a11y-controls button{
+  font-family:'Heebo',sans-serif;
+  font-size:14px;
+  background:var(--black);
+  color:var(--pearl);
+  border:1px solid var(--orange);
+  border-radius:2px;
+  padding:10px 16px;
+  cursor:pointer;
+  transition:.2s;
+}
+.a11y-controls button:hover{ background:var(--orange); color:var(--black); }
+.a11y-controls button:focus-visible{ outline:3px solid var(--orange); outline-offset:2px; }
+
+/* Mobile-first: base styles above are already mobile. Scale up for larger screens */
+@media(min-width:600px){
+  .legal-hero h1{ font-size:52px; }
+  main.legal-content{ padding:56px 32px 100px; }
+}
+
+/* Focus visibility for accessibility compliance (Israeli Standard 5568) */
+a:focus-visible, button:focus-visible{
+  outline:3px solid var(--orange);
+  outline-offset:2px;
+}
