@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.masters-studio.co.il/sitemap.xml

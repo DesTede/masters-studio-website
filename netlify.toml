@@ -1,0 +1,47 @@
+[build]
+  publish = "."
+
+# Pretty URLs: /pricing instead of /pricing.html
+[[redirects]]
+  from = "/pricing"
+  to = "/pricing.html"
+  status = 200
+
+[[redirects]]
+  from = "/academy"
+  to = "/academy.html"
+  status = 200
+
+[[redirects]]
+  from = "/articles/fade"
+  to = "/articles/mah-ze-fade.html"
+  status = 200
+
+[[redirects]]
+  from = "/articles/choose-a-cut"
+  to = "/articles/how-to-choose-cut.html"
+  status = 200
+
+[[redirects]]
+  from = "/articles/beard-care"
+  to = "/articles/beard-care.html"
+  status = 200
+
+# Long-term caching for static assets (filenames are stable, safe to cache hard)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Basic security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
