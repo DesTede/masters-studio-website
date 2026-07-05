@@ -65,9 +65,9 @@ p{margin:0 0 1em}
   border-bottom:1px solid var(--line);
 }
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-logo{background:var(--pearl);padding:7px 14px;border-radius:10px;display:inline-flex;align-items:center;transition:transform .15s}
+.nav-logo{background:transparent;padding:0;border-radius:10px;display:inline-flex;align-items:center;transition:transform .15s}
 .nav-logo:hover{transform:translateY(-1px)}
-.nav-logo img{height:26px;width:auto;display:block}
+.nav-logo img{height:40px;width:auto;display:block;border-radius:10px}
 .nav-links{display:none;gap:26px;align-items:center}
 .nav-links a{font-size:14px;font-weight:600;color:var(--pearl);opacity:.82;transition:opacity .2s,color .2s}
 .nav-links a:hover{opacity:1;color:var(--orange)}
@@ -306,6 +306,8 @@ section{padding:74px 0;position:relative}
 .sticky-cta .btn{flex:1}
 .sticky-cta .btn-ghost{flex:none;padding-inline:18px}
 @media(min-width:900px){.sticky-cta{display:none}}
+.sticky-cta{transition:transform .3s ease, opacity .3s ease}
+.sticky-cta.hide{transform:translateY(120%);opacity:0;pointer-events:none}
 body{padding-bottom:76px}
 @media(min-width:900px){body{padding-bottom:0}}
 
