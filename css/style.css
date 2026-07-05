@@ -78,7 +78,7 @@ p{margin:0 0 1em}
   transition:transform .15s,box-shadow .2s;
 }
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 20px -6px rgba(252,96,48,.6)}
-.burger{display:inline-flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:12px}
+.burger{display:inline-flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:14px 12px}
 .burger span{width:24px;height:2px;background:var(--pearl);border-radius:2px;transition:.25s}
 .mobile-menu{display:none;flex-direction:column;padding:8px 0 18px;border-top:1px solid var(--line)}
 .mobile-menu a{padding:13px var(--gutter);font-weight:600;border-bottom:1px solid var(--line)}
@@ -290,7 +290,7 @@ section{padding:74px 0;position:relative}
 .footer p{color:rgba(229,229,229,.55);font-size:14px}
 .footer h4{font-size:13px;letter-spacing:.12em;color:var(--orange);margin-bottom:14px;text-transform:uppercase;font-family:var(--ff-display)}
 .footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
-.footer ul a{color:rgba(229,229,229,.7);font-size:14px}
+.footer ul a{color:rgba(229,229,229,.7);font-size:14px;display:inline-block;padding:6px 0}
 .footer ul a:hover{color:var(--orange)}
 .footer-bottom{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);
   display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:rgba(229,229,229,.4);font-size:12.5px}
