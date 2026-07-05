@@ -23,9 +23,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/hero-poster.jpg" fetchpriority="high">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Heebo:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Heebo:wght@400;500;700;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Heebo:wght@400;500;700;900&display=swap"></noscript>
+
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/cookie-consent.css">
+
+<link rel="preload" as="style" href="css/cookie-consent.css">
+<link rel="stylesheet" href="css/cookie-consent.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="css/cookie-consent.css"></noscript>
     
 <!-- Local business structured data (SEO) -->
 <script type="application/ld+json">
@@ -102,8 +108,8 @@
 <!-- HERO -->
 <section class="hero" aria-label="ברוכים הבאים">
     <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg">
-<!--    <source src="assets/hero-video.webm" type="video/webm">-->
-<!--    <source src="assets/hero-video.mp4" type="video/mp4">-->
+    <source src="assets/hero-video.webm" type="video/webm">
+    <source src="assets/hero-video.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   <div class="container">
@@ -448,23 +454,5 @@
 </div>
 
 <script src="js/cookie-consent.js"></script>
-<script>
-    // Defer hero video load until after first paint (LCP optimization)
-    window.addEventListener('load', function() {
-        var v = document.getElementById('hero-video');
-        if (!v) return;
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        var webm = document.createElement('source');
-        webm.src = 'assets/hero-video.webm';
-        webm.type = 'video/webm';
-        var mp4 = document.createElement('source');
-        mp4.src = 'assets/hero-video.mp4';
-        mp4.type = 'video/mp4';
-        v.appendChild(webm);
-        v.appendChild(mp4);
-        v.load();
-        v.play().catch(function(){});
-    });
-</script>
 </body>
 </html>
