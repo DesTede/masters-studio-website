@@ -288,9 +288,9 @@ section{padding:74px 0;position:relative}
 .flogo-chip{background:var(--pearl);display:inline-flex;padding:10px 16px;border-radius:10px;margin-bottom:16px}
 .flogo-chip img{height:24px;width:auto;display:block;margin:0}
 .footer p{color:rgba(229,229,229,.55);font-size:14px}
-.footer h4{font-size:13px;letter-spacing:.12em;color:var(--orange);margin-bottom:14px;text-transform:uppercase;font-family:var(--ff-display)}
+.footer h3{font-size:13px;letter-spacing:.12em;color:var(--orange);margin-bottom:14px;text-transform:uppercase;font-family:var(--ff-display)}
 .footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
-.footer ul a{color:rgba(229,229,229,.7);font-size:14px;display:inline-block;padding:6px 0}
+.footer ul a{color:rgba(229,229,229,.7);font-size:14px;display:inline-block;padding:11px 0}
 .footer ul a:hover{color:var(--orange)}
 .footer-bottom{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);
   display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:rgba(229,229,229,.4);font-size:12.5px}

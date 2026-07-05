@@ -43,9 +43,10 @@
 #mc-banner button{
   font-family:'Heebo',sans-serif;
   font-size:13.5px;
+  line-height:1.3;
   font-weight:700;
   border-radius:2px;
-  padding:13px 18px;
+  padding:14px 18px;
   cursor:pointer;
   border:1px solid #FC6030;
   transition:.2s;
@@ -132,7 +133,8 @@
   font-family:'Heebo',sans-serif;
   font-weight:700;
   font-size:13.5px;
-  padding:10px;
+  line-height:1.3;
+  padding:15px;
   border-radius:2px;
   cursor:pointer;
 }
