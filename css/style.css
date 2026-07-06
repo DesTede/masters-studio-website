@@ -129,7 +129,7 @@ section{padding:74px 0;position:relative}
 .hero{
   position:relative;overflow:hidden;
   min-height:92vh;display:flex;align-items:center;padding:100px 0 70px;
-  background:#111 url("../assets/texture2.jpg") center/cover no-repeat;
+  background:#111 url("../assets/texture2.webp") center/cover no-repeat;
 }
 .hero-video{
   position:absolute;inset:0;width:100%;height:100%;
