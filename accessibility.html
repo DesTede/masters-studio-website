@@ -7,14 +7,29 @@
 <meta name="description" content="הצהרת הנגישות של Masters. studio ופרטי יצירת קשר לדיווח על בעיות נגישות באתר.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://masters-studio.co.il/accessibility.html">
-<link rel="icon" href="/assets/Main_Logo__Black.png">
-<link rel="stylesheet" href="/css/legal.css">
+  <link rel="icon" type="image/png" href="assets/logo-black.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/legal.css">
 </head>
 <body class="legal-page">
 
-<header class="legal-header">
-  <img src="/assets/Main_Logo__Dark_BG.png" alt="Masters. studio">
-  <a class="back-home" href="/index.html">חזרה לאתר</a>
+<header class="nav">
+  <div class="container nav-in">
+    <a class="nav-logo" href="index.html" aria-label="Masters studio — דף הבית"><img src="assets/logo-lightbg.png" alt="הלוגו של Masters studio"></a>
+    <nav class="nav-links" aria-label="ניווט ראשי">
+      <a href="index.html#about">הסטודיו</a>
+      <a href="index.html#services">שירותים</a>
+      <a href="pricing.html">מחירון</a>
+      <a href="index.html#team">הצוות</a>
+      <a href="academy.html">אקדמיה</a>
+      <a href="index.html#articles">מדריכים</a>
+      <a href="index.html#faq">שאלות</a>
+    </nav>
+    <a class="nav-cta" href="index.html#book">קבעו תור</a>
+  </div>
 </header>
 
 <section class="legal-hero">
@@ -59,14 +74,22 @@
 
 </main>
 
-<footer class="legal-footer">
-  <div>Masters. studio © 2026</div>
-  <nav>
-    <a href="/privacy-policy.html">מדיניות פרטיות</a>
-    <a href="/accessibility.html">הצהרת נגישות</a>
-    <a href="/terms.html">תנאי שימוש</a>
-    <a href="/privacy-settings.html">הגדרות פרטיות</a>
-  </nav>
+<footer class="footer">
+  <div class="container">
+    <img class="flogo" src="assets/logo-lightbg.png" alt="Masters studio">
+    <div class="footer-bottom" style="border:0;margin:0;padding:0">
+      <span>© 2026 Masters. studio</span>
+      <span><a href="index.html" class="footer-back">חזרה לאתר ←</a></span>
+    </div>
+    <div class="footer-bottom" style="border:0;margin:6px 0 0;padding:0">
+      <span>
+        <a href="privacy-policy.html">מדיניות פרטיות</a> ·
+        <a href="terms.html">תנאי שימוש</a> ·
+        <a href="accessibility.html">הצהרת נגישות</a> ·
+        <a href="privacy-settings.html">הגדרות פרטיות</a>
+      </span>
+    </div>
+  </div>
 </footer>
 
 <script>
